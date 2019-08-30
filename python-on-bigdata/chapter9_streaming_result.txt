@@ -1,0 +1,189 @@
+1 TCP Server 
+
+command : (base) root@script_test# spark-submit chapter9_streaming.py 127.0.0.1 9876 > res1.txt
+
+	  (base) root@script_test# nc -lk 9876
+		A StreamingContext represents the connection to a Spark cluster, and can be used to create DStream various input sources. 			It can be from an existing SparkContext
+
+
+
+1.1 result :
+
+-------------------------------------------
+Time: 2019-08-29 20:17:16
+-------------------------------------------
+(u'and', 1)
+(u'SparkContext', 1)
+(u'from', 1)
+(u'A', 1)
+(u'cluster,', 1)
+(u'create', 1)
+(u'connection', 1)
+(u'various', 1)
+(u'a', 1)
+(u'sources.', 1)
+(u'Spark', 1)
+(u'the', 1)
+(u'be', 2)
+(u'used', 1)
+(u'an', 1)
+(u'represents', 1)
+(u'It', 1)
+(u'existing', 1)
+(u'to', 2)
+(u'can', 2)
+(u'StreamingContext', 1)
+(u'input', 1)
+(u'DStream', 1)
+
+
+1.2 pyspark output msg 
+
+19/08/29 22:19:37 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.223.129, 35107, None)
+19/08/29 22:19:37 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.223.129, 35107, None)
+19/08/29 22:19:38 INFO ReceiverTracker: Starting 1 receivers
+......
+19/08/29 22:19:39 INFO DAGScheduler: Got job 1 (runJob at PythonRDD.scala:153) with 1 output partitions
+19/08/29 22:19:39 INFO DAGScheduler: Final stage: ResultStage 2 (runJob at PythonRDD.scala:153)
+19/08/29 22:19:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+19/08/29 22:19:39 INFO DAGScheduler: Missing parents: List()
+...
+19/08/29 22:19:39 INFO Executor: Running task 0.0 in stage 2.0 (TID 1)
+19/08/29 22:19:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks including 0 local blocks and 0 remote blocks
+19/08/29 22:19:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+19/08/29 22:19:40 INFO JobScheduler: Added jobs for time 1567142380000 ms
+
+
+------------------------------------------------
+
+2  HDFS file 
+
+command: (base) root@script_test# spark-submit chapter9_streaming.py 
+         
+2.1 result msg 
+
+(base) root@script_test# ls data_json/
+part-00000-5dd13f5c-8839-4a58-acdd-99c3f7c600f5-c000.json  _SUCCESS
+
+(base) root@script_test# vi data_json/part-00000-5dd13f5c-8839-4a58-acdd-99c3f7c600f5-c000.json 
+  1 {"sepal_length":"5.1","sepal_width":"3.5","petal_length":"1.4","petal_width ":"0.2","species":"setosa"}
+  2 {"sepal_length":"4.9","sepal_width":"3","petal_length":"1.4","petal_width ":"0.2","species":"setosa"}
+  3 {"sepal_length":"4.7","sepal_width":"3.2","petal_length":"1.3","petal_width ":"0.2","species":"setosa"}
+  4 {"sepal_length":"4.6","sepal_width":"3.1","petal_length":"1.5","petal_width ":"0.2","species":"setosa"}
+
+2.2 pyspark output msg
+
+19/08/29 22:32:33 INFO ForEachDStream: Slide time = 1000 ms
+19/08/29 22:32:33 INFO ForEachDStream: Storage level = Serialized 1x Replicated
+19/08/29 22:32:33 INFO ForEachDStream: Checkpoint interval = null
+19/08/29 22:32:33 INFO ForEachDStream: Remember interval = 1000 ms
+19/08/29 22:32:33 INFO ForEachDStream: Initialized and validated org.apache.spark.streaming.dstream.ForEachDStream@3815e6b3
+19/08/29 22:32:33 INFO RecurringTimer: Started timer for JobGenerator at time 1567143154000
+19/08/29 22:32:33 INFO JobGenerator: Started JobGenerator at 1567143154000 ms
+19/08/29 22:32:33 INFO JobScheduler: Started JobScheduler
+19/08/29 22:32:33 INFO StreamingContext: StreamingContext started
+19/08/29 22:32:34 INFO FileInputDStream: Finding new files took 857 ms
+19/08/29 22:32:34 INFO FileInputDStream: New files at time 1567143154000 ms:
+
+19/08/29 22:32:35 INFO JobScheduler: Added jobs for time 1567143154000 ms
+19/08/29 22:32:35 INFO FileInputDStream: Finding new files took 6 ms
+19/08/29 22:32:35 INFO FileInputDStream: New files at time 1567143155000 ms:
+
+19/08/29 22:32:35 INFO JobScheduler: Starting job streaming job 1567143154000 ms.0 from job set of time 1567143154000 ms
+-------------------------------------------
+Time: 2019-08-29 22:32:34
+-------------------------------------------
+
+3 linux path 
+
+command: (base) root@script_test# spark-submit chapter9_streaming.py 
+        
+
+3.1 resutl msg 
+a picture 
+
+3.2 pyspark msg output 
+
+
+
+
+
+4 kafka 
+
+command : 
+(base) root@script_test# spark-submit --jars spark-streaming-kafka-0-8-assembly_2.11-2.4.3.jar chapter9_streaming.py 127.0.0.1:2181 test > res4.txt
+
+
+4.1  result 
+
+ -------------------------------------------
+  Time: 2019-08-29 23:22:19
+ -------------------------------------------
+  (u'operations', 1)
+  (u'and', 1)
+  (u'is', 1)
+  (u'as', 1)
+  (u'Kafka,', 1)
+  (u'from', 3)
+  (u'window', 1)
+  (u'TCP', 1)
+  (u'(such', 1)
+  (u'live', 2)
+  (u'Spark', 1)
+  (u'etc.)', 1)
+  (u'parent', 1)
+  (u'transforming', 2)
+  (u'reduceByKeyAndWindow.', 1)
+  (u'While', 1)
+  (u'data', 3)
+  (u'RDD,', 1)
+  (u'a', 4)
+  (u'sockets,', 1)
+  (u'generated', 2)
+  (u'map,', 1)
+  (u'the', 1)
+  (u'Flume,', 1)
+  ...
+
+
+4.2 pyspak msg
+     
+
+19/08/29 23:19:09 INFO PythonTransformedDStream: Slide time = 1000 ms
+19/08/29 23:19:09 INFO PythonTransformedDStream: Storage level = Serialized 1x Replicated
+19/08/29 23:19:09 INFO PythonTransformedDStream: Checkpoint interval = null
+19/08/29 23:19:09 INFO PythonTransformedDStream: Remember interval = 1000 ms
+19/08/29 23:19:09 INFO PythonTransformedDStream: Initialized and validated org.apache.spark.streaming.api.python.PythonTransformedDStream@4921c497
+19/08/29 23:19:09 INFO ForEachDStream: Slide time = 1000 ms
+19/08/29 23:19:09 INFO ForEachDStream: Storage level = Serialized 1x Replicated
+19/08/29 23:19:09 INFO ForEachDStream: Checkpoint interval = null
+19/08/29 23:19:09 INFO ForEachDStream: Remember interval = 1000 ms
+19/08/29 23:19:09 INFO ForEachDStream: Initialized and validated org.apache.spark.streaming.dstream.ForEachDStream@616868ec
+19/08/29 23:19:09 INFO RecurringTimer: Started timer for JobGenerator at time 1567145950000
+19/08/29 23:19:09 INFO JobGenerator: Started JobGenerator at 1567145950000 ms
+19/08/29 23:19:09 INFO JobScheduler: Started JobScheduler
+
+  
+19/08/29 23:19:11 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+19/08/29 23:19:11 INFO Executor: Running task 0.0 in stage 2.0 (TID 1)
+19/08/29 23:19:11 INFO Executor: Fetching spark://192.168.223.129:36933/jars/spark-streaming-kafka-0-8-assembly_2.11-2.4.3.jar with timestamp 1567145947922
+19/08/29 23:19:11 INFO JobScheduler: Added jobs for time 1567145951000 ms
+19/08/29 23:19:11 INFO TransportClientFactory: Successfully created connection to /192.168.223.129:36933 after 82 ms (0 ms spent in bootstraps)
+
+
+19/08/29 23:19:11 INFO Utils: Fetching spark://192.168.223.129:36933/jars/spark-streaming-kafka-0-8-assembly_2.11-2.4.3.jar to /tmp/spark-5659d365-17e0-447c-912f-d099680c67bb/userFiles-2ae931f7-a026-420b-ab0f-56b7622be41b/fetchFileTemp364073143096131741.tmp
+19/08/29 23:19:12 INFO JobScheduler: Added jobs for time 1567145952000 ms
+^C19/08/29 23:19:12 INFO TaskSchedulerImpl: Cancelling stage 0
+19/08/29 23:19:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage cancelled
+19/08/29 23:19:12 INFO Executor: Executor is trying to kill task 0.0 in stage 0.0 (TID 0), reason: Stage cancelled
+19/08/29 23:19:12 INFO TaskSchedulerImpl: Stage 0 was cancelled
+19/08/29 23:19:12 INFO DAGScheduler: ResultStage 0 (start at NativeMethodAccessorImpl.java:0) failed in 1.899 s due to Job 0 cancelled as part of cancellation of all jobs
+
+         
+
+
+
+
+
+
+
