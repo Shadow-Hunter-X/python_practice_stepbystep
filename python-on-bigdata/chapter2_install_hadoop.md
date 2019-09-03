@@ -1,8 +1,12 @@
 ---
-在Ubuntu上安装单机版大数据环境
+title:大数据开发环境的搭建
 ---
 
-#1 安装ubuntu虚拟机
+工欲利其事,必先利其器
+
+# 自己在虚拟机上安装大数据环境
+
+##1 安装ubuntu虚拟机
 
 http://mirrors.aliyun.com/ubuntu-releases/ , 在阿里云镜像网站上，选项自己需要的ubuntu版本的ISO文件，在virtual box 或 vmware上进行安装。
 但由于
@@ -28,7 +32,7 @@ PermitRootLogin without-password  --> PermitRootLogin yes
 ~~~
 
 
-#2 安装JDK
+##2 安装JDK
 
 https://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html
 
@@ -60,17 +64,17 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.11-b03, mixed mode)
 ~~~
 
 
-#3 安装anaconda开发环境
+##3 安装anaconda开发环境
 
 ~~~
 
 下载地址： https://repo.continuum.io/archive/index.html
 
-1 可直至从浏览器下载，也可以使用下载工具wget ： wget https://repo.continuum.io/archive/Anaconda2-2019.07-Linux-x86_64.sh
+* 1 可直至从浏览器下载，也可以使用下载工具wget ： wget https://repo.continuum.io/archive/Anaconda2-2019.07-Linux-x86_64.sh
 下载完毕后，查看文件MD5值是否完整的下载 md5sum Anaconda2-2019.07-Linux-x86_64.sh 和官网的上的MD5值比较，确认是否完整下载。
 否则的话,安装时会提示： ERROR: size of Anaconda3-2019.07-Linux-x86_64.sh should be    541906131 bytes
 
-2 安装命令
+* 2 安装命令
 bash Anaconda2-2019.07-Linux-x86_64.sh
 
 在安装期间，首先会提示阅读并同意相关条款，按回车键即可。
@@ -79,7 +83,7 @@ agreement.
 Please, press ENTER to continue
 >>> 
 
-3 成功安装后,会提示是否进行初始化操作：输入 yes 
+* 3 成功安装后,会提示是否进行初始化操作：输入 yes 
 Do you wish the installer to initialize Anaconda2
 by running conda init? [yes|no]
 [no] >>> yes
@@ -92,12 +96,12 @@ conda config --set auto_activate_base false
 
 Thank you for installing Anaconda2!
 
-4 验证查看安装的anaconda
+* 4 验证查看安装的anaconda
 
 (base) root@ubuntu:/usr/Anaconda2# conda --version
 conda 4.7.10
 
-5 安装需要的pthon库
+* 5 安装需要的pthon库
 打开 anaconda-navigator​
 --(base) root@ubuntu:/usr/Anaconda2# conda install -c anaconda anaconda-navigator​
 --Collecting package metadata (current_repodata.json): \ 
@@ -108,20 +112,18 @@ conda 4.7.10
 
 [一张图片的引用](在界面上安装的过程的图。)
 
-6 注：在windows上安装较为简单，下载安装包后即可安装。
-
 ~~~
 
-# 4 安装Hadoop 
+## 4 安装Hadoop 
 
 官方网站下载地址 ：https://hadoop.apache.org/releases.html  
 如下载速度太慢，可选择国内的镜像源,如清华大学开源镜像站：https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/
 
 下载完安装包，后进行安装操作：
-	1 解压到当前目录
+* 1 解压到当前目录
 	tar --zxvf  hadoop-2.7.6.tar.gz -C ./ 
 	  	
-	2 修改全局配置文件
+* 2 修改全局配置文件
 	vi /etc/profile
 	export HADOOP_HOME=/usr/hadoop-2.7.6
 	export CLASSPATH=$($HADOOP_HOME/bin/hadoop classpath):$CLASSPATH
@@ -179,14 +181,14 @@ conda 4.7.10
 	</property>
 	
 
-	3 配置完成后，执行namenode的初始化并启动
+* 3 配置完成后，执行namenode的初始化并启动
 	
 	hdfs namenode -format
 	
     启动namenode和datanode进程
 	(base) root@hadoop-2.7.6# start-dfs.sh 
 	
-	4 验证
+* 4 验证
 	
 	 http://localhost:50070  
 	 (要有一个界面出现,对于Hadoop的WebUI界面,在Web界面上可以查看配置信息是运行情况)
@@ -212,8 +214,8 @@ conda 4.7.10
 	 .....
 	 
 	 
-5 hive 使用 hive 1.2.2 解压即可运行
-	简单起见，使用默认的derby数据库，基本就无须配置了。下载地址：https://mirrors.tuna.tsinghua.edu.cn/apache/hive/
+## 5 hive安装 
+	使用 hive 1.2.2 解压即可运行，简单起见，使用默认的derby数据库，基本就无须配置了。下载地址：https://mirrors.tuna.tsinghua.edu.cn/apache/hive/
 	
 	解压到当前目录并重命名
 	tar -zxvf apache-hive-1.2.2-bin.tar.gz ./
@@ -267,7 +269,7 @@ conda 4.7.10
 	4.7	3.2	1.3	0.2	setosa
 	...
 
-6 spark 安装  
+## 6 spark 安装  
     选择和Hadoop版本对应的Spark，下载地址：https://mirrors.tuna.tsinghua.edu.cn/apache/spark/
 	tar -zxvf spark-2.2.0-bin-hadoop2.7.tgz -C ./ 
 	mv spark-2.2.0-bin-hadoop2.7 spark-2.2.0 
@@ -291,10 +293,9 @@ conda 4.7.10
 	成功开后可查看Spark UI界面
 	[](引入一张图)
 
-7 kafka安装
+## 7 kafka安装
 
-	下载版本：
-	kafka_2.11-0.10.0.0.tgz 
+	下载版本：kafka_2.11-0.10.0.0.tgz  下载地址：http://kafka.apache.org/downloads
 	
 	tar -zxvf kafka_2.11-0.10.0.0.tgz  -C ./ 
 	
@@ -320,50 +321,69 @@ conda 4.7.10
 		
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-使用HDP SandBox大数据集成环境
+# 使用HDP SandBox大数据集成环境
 
 HDP 是Hortonworks推出的数据平台，提供的丰富的功能，且省去大量的安装和配置工作。HDP SandBox是可以很容易地开始使用Apache Hadoop、Apache Spark、Apache Hive、
 Apache HBase、Druid和Data Analytics Studio (DAS)，只需要下载安装ova文件，导入到虚拟化环境中即可，目前在支持虚拟化环境的有Virtual box ， Vmware ， Docker 。
 
-自从 Hortonworks 和 Cloudera 两个目前主要的大数据平台开发商合并后，SandBox的下载地址变为：https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html
+自从 Hortonworks 和 Cloudera 两个目前主要的大数据平台开发商合并后，SandBox的下载地址也转移到：https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html
 
-
-安装 ： 下载对应的ova后，进行导入即可。
+安装 ： 下载对应的ova后，进行导入即可；随后的操作就和一般的虚拟机操作一样，但需要注意初次使用注意：开启Admin账号;各不同的账号的权限范围。
 
 对HDP大数据平台环境的查看：
 
-1 主要的服务的介绍了
+##1 主要的服务的介绍了
 
-2 配置的说明
+截图说明 
 
-3 简洁的工具
+##2 配置的说明
 
+如何查看配置项的说明
 
+##3 简洁的工具
 
+一些的工具，如Hive的查询，shell等
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+# 在Windows上安装Spark开发学习环境  
 
-在Windows上安装Spark开发学习环境  
-
-
-准备：spark-2.4.2-bin-hadoop2.7 
+## 1准备：spark-2.4.2-bin-hadoop2.7 
 		
       为了能让Spark在Windows上执行，需要使用一个工具winutils.exe，它是在Windows上的Hadoop的编译版本，下载地址 https://github.com/steveloughran/winutils/ 
 	  
 	  在解压Spark安装包后，将winutils.exe拷贝到Spark解压目录下的bin目录下 ; 并为Spark的安装目录配置环境变量中。
 	  
-	  
-	  配置完毕后检查Spark是否能正常开启，在CMD或Powershell中，输入spark-shell。
-	  
-	  
 	  安装Anaconda，安装对应的Windows版本，安装即可。
 	  
+## 2 检查查看，配置完毕后检查Spark是否能正常开启，在Anaconda Powershell Prompt ，输入spark-shell。
 	  
-	  
+	(base) PS C:\Users\Administrator> spark-shell.cmd
+	  Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 2.4.2
+      /_/
 
+	Using Scala version 2.12.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_191)
+	Type in expressions to have them evaluated.
+	Type :help for more information.
+	scala>
+		
+	在Anaconda Powershell Prompt ，输入spark-shell，后将会跳转到Jupyter Web界面 。
 
+	
+# 总结：
 
+各种的方法的优缺点的对比说明：
+
+HDP节省了安装配置的时间，且整个平台安装的大数据平台的应用服务完整丰富；通过其能够完整有效的学习大数据库系统的开发和运维，但是
+由于刚开始使用HDP时有一定的学习成本；最后对安装机器的配置有一定的要求，最好根据官方网站的建议配置。
+
+在Windows上安装Spark开发环境，安装过程简单；能够快速进入到实操阶段，是意在只学习使用Spark进行大数据的分析和挖掘的良好的开端。
+
+自行安装大数据平台环境，安装过程中理解各功能模块，配置文件的作用;逐步的安装各功能模块进阶性的学习，主要的不利是安装过程繁琐，且要注意各安装包间的版本匹配。
 
 
 	 

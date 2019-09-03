@@ -5,6 +5,8 @@ Python 练习实践
 ----------------------------------------------------------------------------------------------
 Python BigData
 
-[1-安装大数据环境](python-on-bigdata/chapter1_install_hadoop.md)  
+[2-安装大数据环境](python-on-bigdata/chapter2_install_hadoop.md)  
+
+[3-构建分析用数据](python-on-bigdata/chapter3_input_data.md)
 
 [9-pyspark-streaming](python-on-bigdata/chapter9_streaming_code.py)                    
