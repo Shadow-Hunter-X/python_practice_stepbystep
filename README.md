@@ -12,4 +12,8 @@ Python On BigData
 
 [4-使用Python Snakebite](python-on-bigdata/chapter4_code.md)
 
+[5-PyHive的使用](python-on-bigdata/chapter5_connect-hive.md)
+
+[5-PyHive的使用](python-on-bigdata/chapter5_udf.py)
+
 [9-pyspark-streaming](python-on-bigdata/chapter9_streaming_code.py)                    
