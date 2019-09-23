@@ -12,7 +12,7 @@ while True:
     connect_value = sepal_length + ' ' + sepal_width + ' ' + petal_length + ' ' + petal_width
     print "\t".join([hashlib.md5(connect_value).hexdigest(),species])
 	
-"""	
+
 add file /root/chapter5.py;
 SELECT TRANSFORM (sepal_length  , sepal_width  , petal_length  , petal_width  , species)
     USING 'python chapter5.py' AS
@@ -25,8 +25,6 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE;
-
-
 LOAD DATA LOCAL INPATH '/root/iris.data' OVERWRITE INTO TABLE iris_data
 
 
@@ -82,5 +80,5 @@ OK
 fa000ea6942640e64aa3b19e5320d953        Iris-setosa
 Time taken: 10.708 seconds, Fetched: 5 row(s)
 
-"""
+
 
