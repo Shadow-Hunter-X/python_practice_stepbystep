@@ -3,7 +3,8 @@
 Python 练习实践 
 
 ----------------------------------------------------------------------------------------------
-Python On BigData
+
+Python 在大数据平台上的应用
 
 
 [2-安装大数据环境](python-on-bigdata/chapter2_install_hadoop.md)  
@@ -15,5 +16,9 @@ Python On BigData
 [5-PyHive的使用](python-on-bigdata/chapter5_connect-hive.md)
 
 [5-PyHive的使用](python-on-bigdata/chapter5_udf.py)
+
+[6-HBase Shell命令](python-on-bigdata/chapter6_hbase_shell.md)
+
+[6-HBase Happybase脚本](python-on-bigdata/chapter6_happybase.py)
 
 [9-pyspark-streaming](python-on-bigdata/chapter9_streaming_code.py)                    

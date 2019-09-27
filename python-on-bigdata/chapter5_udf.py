@@ -62,7 +62,6 @@ Query ID = root_20190917222727_c067f91c-c1a1-4a8c-b9f6-eb4d4d25fdc0
 Total jobs = 1
 Launching Job 1 out of 1
 
-
 Status: Running (Executing on YARN cluster with App id application_1568758057499_0003)
 
 --------------------------------------------------------------------------------
