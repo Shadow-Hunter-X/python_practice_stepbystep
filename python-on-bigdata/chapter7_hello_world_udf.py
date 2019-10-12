@@ -24,7 +24,13 @@ def parse_title(title):
 """
 	取得电影名,去掉年份
 """
-	return re.sub(r'\s*\(\d{4}\)','', title)
+	movie_name = re.sub(r'\s*\(\d{4}\)','', title)
+	groups=re.search(r'\s*\(\d{4}\)',title,re.M|re.I)
+	if groups:
+		issue_year=int(title[groups.span()[0]:groups.span()[1]].strip()[1:5])
+		year_diff=datetime.now().year - issue_year
+		return movie_name ,  issue_year , year_diff
+	return movie_name , -1 , -1 
 	
 @outputSchema('days_since_release:int')
 def days_since_release(date):
@@ -40,19 +46,17 @@ def days_since_release(date):
 
 '''
 ```
-REGISTER 'udfs/date_diff.py' USING streaming_python AS date_diff;
+REGISTER '/home/hadoop/test_data/date_diff.py' USING streaming_python AS date_diff;
 
 -- 加载Python脚本
 records = LOAD '/home/hadoop/test_data/movies.csv' USING PigStorage(',') AS (movieId:int, title:chararray, release_date:chararray);
 
 -- 解析电影名和计算出版时间
-titles = FOREACH records GENERATE date_diff.parse_title(title),movies_udf.days_since_release(release_date);
--- Order the movies by the time since release
-most_recent = ORDER titles BY days_since_release ASC;
--- Get the ten most recent movies
-top_ten = LIMIT most_recent 10;
--- Display the top ten most recent movies
-DUMP top_ten;
+titles = FOREACH records GENERATE date_diff.parse_title(title) ;
+
+data = limit titles 10 ;
+
+dump data
 '''
 
 
