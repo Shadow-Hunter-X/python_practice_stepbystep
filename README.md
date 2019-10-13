@@ -1,6 +1,6 @@
 # python_practice_stepbystep
 
-Python 练习实践 
+Python 练习实践代码 
 
 ----------------------------------------------------------------------------------------------
 
@@ -21,4 +21,12 @@ Python 在大数据平台上的应用
 
 [6-HBase Happybase脚本](python-on-bigdata/chapter6_happybase.py)
 
-[9-pyspark-streaming](python-on-bigdata/chapter9_streaming_code.py)                    
+[7-Pig Python UDF脚本](python-on-bigdata/chapter7_hello_world_udf.py)
+
+[7-Pig code](python-on-bigdata/chapter7_pig_code.md)
+
+[8-Spark Shell使用](python-on-bigdata/chapter8_sparkshell.md)
+
+[9-Spark Python RDD操作](python-on-bigdata/chapter9_pyspark_rdd.md)
+
+[11-pyspark-streaming](python-on-bigdata/chapter11_streaming_code.py)                    
