@@ -28,7 +28,7 @@ title: pyspark rdd
 
 ~~~
 
-* 其他
+* 示例
 ~~~python
 >>> seqOp = (lambda x, y: (x[0] + y, x[1] + 1))
 >>> combOp = (lambda x, y: (x[0] + y[0], x[1] + y[1]))
@@ -107,7 +107,7 @@ defaultdict(<type 'int'>, {'a': 2, 'b': 1})
 ~~~
 
 
-* transformation函数
+* 
 
 ~~~python
 
