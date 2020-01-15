@@ -1,10 +1,12 @@
 # python_practice_stepbystep
 
+### Python在大数据平台的应用 - 附书源码
+更多信息请浏览：
 ----------------------------------------------------------------------------------------------
 
 ![logo info](logo.png)
 
-## Python 在大数据平台上的应用
+## Python在大数据平台上的应用
  
 [第二章-安装大数据环境](python-on-bigdata/chapter2/chapter2_目录.md)  
 
