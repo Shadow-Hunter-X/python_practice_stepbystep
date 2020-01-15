@@ -1,32 +1,35 @@
 # python_practice_stepbystep
 
-Python 练习实践代码 
-
 ----------------------------------------------------------------------------------------------
 
-Python 在大数据平台上的应用
+![logo info](logo.png)
 
+## Python 在大数据平台上的应用
+ 
+[第二章-安装大数据环境](python-on-bigdata/chapter2/chapter2_目录.md)  
 
-[2-安装大数据环境](python-on-bigdata/chapter2_install_hadoop.md)  
+[第三章-构建分析用数据](python-on-bigdata/chapter3/chapter3_目录.md)
 
-[3-构建分析用数据](python-on-bigdata/chapter3_input_data_code.md)
+[第四章-使用Python Snakebite管理HDFS](python-on-bigdata/chapter4/chapter4_code.ipynb)
 
-[4-使用Python Snakebite](python-on-bigdata/chapter4_code.md)
+[第五章-使用PyHive操作Hive](python-on-bigdata/chapter5/chapter5_connect-hive.ipynb)
 
-[5-PyHive的使用](python-on-bigdata/chapter5_connect-hive.md)
+[第六章-使用HappyBase操作HBase](python-on-bigdata/chapter6/chapter6_目录.md)
 
-[5-PyHive的使用](python-on-bigdata/chapter5_udf.py)
+[第七章-Pig Python的操作](python-on-bigdata/chapter7/chapter7_目录.md)
 
-[6-HBase Shell命令](python-on-bigdata/chapter6_hbase_shell.md)
+[第八章-PySpark Shell](python-on-bigdata/chapter8/chapter8_目录.md)
 
-[6-HBase Happybase脚本](python-on-bigdata/chapter6_happybase.py)
+[第九章-PySpark RDD操作](python-on-bigdata/chapter9/chapter9_目录.md)
 
-[7-Pig Python UDF脚本](python-on-bigdata/chapter7_hello_world_udf.py)
+[第十章-Spark DataFrame操作](python-on-bigdata/chapter10/chapter10_目录.md)
 
-[7-Pig code](python-on-bigdata/chapter7_pig_code.md)
+[第十一章-Spark Streaming操作](python-on-bigdata/chapter11/chapter11_目录.md)
 
-[8-Spark Shell使用](python-on-bigdata/chapter8_sparkshell.md)
+[第十二章-Spark SQL操作](python-on-bigdata/chapter12/chapter12_目录.md)
 
-[9-Spark Python RDD操作](python-on-bigdata/chapter9_pyspark_rdd.md)
+[第十四章-数据分析](python-on-bigdata/chapter14/chapeter14_目录.md)                    
 
-[11-pyspark-streaming](python-on-bigdata/chapter11_streaming_code.py)                    
+[第十五章-数据挖掘](python-on-bigdata/chapter15/chapeter15_目录.md)                    
+
+[第十六章-数据可视化](python-on-bigdata/chapter16/chapeter16_目录.md)                    
