@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"name": "Google","url": "http://www.google.com","times":"3"}
 {"name": "Baidu","url": "http://www.baidu.com","times":"2"}
 {"name": "bing","url": "http://www.bing.com","times":"1"}
@@ -16,3 +17,25 @@
 {"name": "Google","url": "http://www.google.com","times":"23"}
 {"name": "Baidu","url": "http://www.baidu.com","times":"8"}
 {"name": "bing","url": "http://www.bing.com","times":"11"}
+
+
+=======
+{"name": "Google","url": "http://www.google.com","times":"3","user":"nick","manager":"Tim"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"2","user":"mike","manager":"kate"}
+{"name": "bing","url": "http://www.bing.com","times":"1","user":"kate","manager":"Tim"}
+{"name": "Google","url": "http://www.google.com","times":"4","user":"mike","manager":"kate"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"7","user":"allen","manager":"kate"}
+{"name": "bing","url": "http://www.bing.com","times":"9","user":"mike","manager":"kate"}
+{"name": "Google","url": "http://www.google.com","times":"2","user":"allen","manager":"kate"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"4","user":"nick","manager":"Tim"}
+{"name": "bing","url": "http://www.bing.com","times":"3","user":"kate","manager":"Tim"}
+{"name": "Google","url": "http://www.google.com","times":"9","user":"allen","manager":"kate"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"3","user":"allen","manager":"kate"}
+{"name": "bing","url": "http://www.bing.com","times":"6","user":"nick","manager":"Tim"}
+{"name": "Google","url": "http://www.google.com","times":"123","user":"mike","manager":"kate"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"28","user":"kate","manager":"Tim"}
+{"name": "bing","url": "http://www.bing.com","times":"101","user":"lee","manager":"Tim"}
+{"name": "Google","url": "http://www.google.com","times":"23","user":"mike","manager":"kate"}
+{"name": "Baidu","url": "http://www.baidu.com","times":"8","user":"kate","manager":"Tim"}
+{"name": "bing","url": "http://www.bing.com","times":"11","user":"allen","manager":"kate"}
+>>>>>>> cf2d7f0b0d09a48cc4c3259ba842d80b69c3cc1b
