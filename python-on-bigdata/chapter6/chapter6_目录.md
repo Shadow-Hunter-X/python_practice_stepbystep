@@ -1,5 +1,5 @@
  
 
-[chapter6_hbase_shell](chapter6_hbase_shell.md)  
+[hbase_shell操作](chapter6_hbase_shell.md)  
 
-[chapter6_happybase](chapter6_happybase.py)
+[happybase使用代码](chapter6_happybase.py)
