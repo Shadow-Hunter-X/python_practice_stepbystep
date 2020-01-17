@@ -103,12 +103,4 @@ defaultdict(<type 'int'>, {'a': 2, 'b': 1})
 >>> data3.collect()
 [('a', 'x'), ('a', 'y'), ('a', 'z'), ('b', 'p'), ('b', 'r')]
 
-
-~~~
-
-
-* 
-
-~~~python
-
 ~~~

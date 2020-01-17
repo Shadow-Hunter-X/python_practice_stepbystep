@@ -34,7 +34,7 @@ dump cell;
 
 * 2-filter操作
 
-```
+```Pig
 iris_ver = filter iris by species matches 'Iris-versicolor';
 iris_ver_10 = limit iris_ver 10 ;
 cell_ver = foreach iris_ver_10 generate petal_length, petal_width,species ;
@@ -66,7 +66,7 @@ dump cell_ver;
 
 * 3-group操作
  
-```
+```Pig
 group_num = group iris by species ;
 cnt = foreach group_num generate group, COUNT(iris);
 dump cnt 
@@ -91,7 +91,7 @@ dump cnt
 
 * 4-order by操作
 
-```
+```Pig
 order_by = order iris by petal_length ;
 order_by_cell = foreach order_by generate petal_length ,species ;
 dump order_by_cell ;
@@ -175,14 +175,14 @@ job_1569388191536_0005
 
 * distinct
 
-```
+```Pig
 uniq =  distinct iris ;
 ```
 
 
-* join
+* join操作
 
-```
+```Pig
 -- 加载movie数据
 movies = load '/user/root/test_data/movies.csv' using PigStorage(',') as (movieId, title, genres);
 -- 加载links数据
@@ -265,15 +265,15 @@ job_1569388191536_0008
 
 ```
 
-* left join 
+* left join 操作
 
-```
+```Pig
 join movies by moviedId left outer , links by movieId ;
 ```
 
 * Parallel
 
-```
+```Pig
 iris = load '/user/root/test_data/iris.data' using PigStorage(',') as (sepal_length, sepal_width, petal_length, petal_width,species);
 group_num = group iris by species parallel 10;
 cnt = foreach group_num generate group, COUNT(iris) ;
