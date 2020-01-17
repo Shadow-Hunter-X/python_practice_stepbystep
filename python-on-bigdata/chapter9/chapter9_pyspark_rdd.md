@@ -1,5 +1,5 @@
 ---
-title: pyspark rdd
+title: pyspark rdd操作
 ---
 
 * spark rdd创建方法
