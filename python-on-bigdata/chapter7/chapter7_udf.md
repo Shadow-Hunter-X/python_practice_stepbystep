@@ -56,7 +56,7 @@ def days_since_release(date):
 ~~~ 
 
 在Pig Latin中调用Python UDF
-~~~shell
+~~~Pig
 REGISTER '/home/hadoop/test_data/date_diff.py' USING streaming_python AS date_diff;
 
 -- 加载Python脚本

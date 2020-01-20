@@ -1,5 +1,5 @@
 ---
-title: pyspark rdd
+title: pyspark rdd操作
 ---
 
 * spark rdd创建方法
@@ -102,13 +102,5 @@ defaultdict(<type 'int'>, {'a': 2, 'b': 1})
 <class 'pyspark.rdd.PipelinedRDD'>
 >>> data3.collect()
 [('a', 'x'), ('a', 'y'), ('a', 'z'), ('b', 'p'), ('b', 'r')]
-
-
-~~~
-
-
-* 
-
-~~~python
 
 ~~~
