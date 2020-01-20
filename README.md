@@ -24,11 +24,11 @@
 
 [第九章-PySpark RDD操作](python-on-bigdata/chapter9/chapter9_目录.md)
 
-[第十章-Spark DataFrame操作](python-on-bigdata/chapter10/chapter10_目录.md)
+[第十章-PySpark DataFrame操作](python-on-bigdata/chapter10/chapter10_目录.md)
 
-[第十一章-Spark Streaming操作](python-on-bigdata/chapter11/chapter11_目录.md)
+[第十一章-PySpark Streaming操作](python-on-bigdata/chapter11/chapter11_目录.md)
 
-[第十二章-Spark SQL操作](python-on-bigdata/chapter12/chapter12_目录.md)
+[第十二章-PySpark SQL操作](python-on-bigdata/chapter12/chapter12_spark_sql.ipynb)
 
 [第十四章-数据分析](python-on-bigdata/chapter14/chapeter14_目录.md)                    
 
