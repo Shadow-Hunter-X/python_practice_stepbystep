@@ -1,7 +1,7 @@
 # python_practice_stepbystep
 
 ### 书籍<<Python在大数据平台的应用>> - 附书源码
-更多信息请浏览：
+更多信息请浏览：<虚位以待>
 ----------------------------------------------------------------------------------------------
 
 ![logo info](logo.png)
@@ -34,4 +34,4 @@
 
 [第十五章-数据挖掘](python-on-bigdata/chapter15/chapter15_目录.md)                    
 
-[第十六章-数据可视化](python-on-bigdata/chapter16/chapeter16_目录.md)                    
+[第十六章-数据可视化](python-on-bigdata/chapter16/chapter16_目录.md)                    
